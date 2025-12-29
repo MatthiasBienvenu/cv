@@ -1,5 +1,13 @@
 #import "@preview/modern-cv:0.9.0": *
 
+#let colored-link(url, body) = link(url)[
+  #set underline(
+    stroke: rgb(0, 120, 255),
+    offset: 1.5pt,
+  )
+  #underline(body)
+]
+
 #show: resume.with(
   author: (
       firstname: "Matthias",
@@ -11,12 +19,13 @@
       address: "2 Rue Geoffroy Saint-Hilaire, 91000 Évry-Courcouronnes",
       positions: ()
   ),
-  profile-picture: none,
+  profile-picture: image("images/profile-picture.png", width: 100%),
   date: datetime.today().display(),
   paper-size: "us-letter"
 )
 
 = Education
+
 #resume-entry(
   title: "Télécom SudParis, Institut Polytechnique de Paris - Engineering degree",
   location: "Évry, France",
@@ -32,8 +41,9 @@
 )
 
 = Profile
+
 #resume-item[
-  - Seeking a research internship from early July to late August 2026.
+  - Seeking a *research internship* from early *July to late August 2026*.
   - Second-year engineering student, curious and motivated, with a passion for solving complex problems.
   - Actively involved in school associations and a strong team player.
   - Holds a valid driving license.
@@ -41,76 +51,111 @@
 
 = Skills
 
-#resume-skill-category[
-  Programming Languages
-]
+=== Programming Languages
+Python, Rust, OCaml, C, C\#, Bash, Java, Lua, SystemVerilog
 
-- Python
-- Rust
-- OCaml
-- C
-- C\#
-- Bash
-- Java
-- Lua
-- System Verilog
-- PHP
+=== Frameworks
 
-#resume-skill-category[
-  Frameworks
-]
 
-Machine Learning and Data Science: PyTorch, Stable-Baselines3, numpy, pandas, matplotlib
-Game Developpement: Unity, Garry's Mod (Valve's Source engine), s&box (Valve's Source 2 engine)
-Micro-Controllers: Arduino, 8051 assembly for AT89 series
-Compilers: Java JFlex, Java CUP
+*Machine Learning and Data Science*: PyTorch, Stable-Baselines3
+
+*Game Development*: Unity, Garry's Mod (Valve's Source engine), s&box (Valve's Source 2 engine)
+
+*Micro-Controllers*: Arduino, 8051 assembly (AT89 series)
+
+*Compiler Developpement*: Java JFlex, Java CUP
 
 = Projects
 
-== Participation in the Autonomous Car Race at ENS Paris-Saclay
+Most of my project can be found on my #colored-link("https://github.com/matthiasbienvenu")[GitHub].
 
-#resume-item[
-  During my first year of engineering school, I joined INTech, the robotics and electronics association of Télécom SudParis, to represent my school at the ENS Paris-Saclay autonomous car race (CoVAPSy). As the high-level programming lead, I used the Webots simulator to train custom models capable of controlling an autonomous vehicle using data from a LiDAR sensor and an onboard camera. I implemented architectures featuring residual connections and two-layer convolutional residual blocks inspired by ResNet, along with training-enhancement techniques such as Dropout and Batch Normalization. To ensure efficient inference on embedded hardware (Raspberry Pi 5), I performed int8 quantization and exported the model to ONNX format. The training pipeline relied on the PPO algorithm. A key technical challenge was the parallelization of multiple simulation environments to accelerate data collection, which required robust inter-process communication via named pipes as well as reliable process synchronization mechanisms. The project has notably been starred by the lead developer of Stable-Baselines3 who published many times in A\* conferences. The project is available on #link("https://github.com/Association-INTech/CoVAPSy")[GitHub]
-]
+== Participation in the Autonomous Car Race at ENS Paris-Saclay 2025 (CoVAPSy)
+
+=== High-level programming lead, INTech, the robotics association of Télécom SudParis
+
+- Trained PPO agents in the Webots simulator using LiDAR + camera inputs with PyTorch + Stable-Baselines3
+
+- Designed CNN architectures with residual connections and two-layer convolutional blocks inspired by ResNet (Dropout + BatchNorm)
+
+- Optimized models for embedded inference on Raspberry Pi 5 via int8 quantization and ONNX export
+
+- Parallelized multiple simulation environments to accelerate training using IPC (named pipes) and process synchronization
+
+- Project starred by lead developer of Stable-Baselines3
 
 == AI Training Sessions
 
-#resume-item[
-  In 2025 I prepared about a dozen training modules of about 1 hour and a half each as co-head of the AI division of the Kryptosphère branch at Télécom SudParis and as the high-level programming lead of INTech, the robotics association. Each session included a presentation with slides and a practical lab so students could apply the concepts. The goal was to teach my classmates how different neural network architectures work such as MLPs, CNNs, RNNs, LSTM-RNNs, GRU-RNNs, and ResNets—and how to implement them using the PyTorch library, which I have been using regularly for over four years.
-]
+=== Co-head of AI division, Télécom SudParis branch of Kryptosphère
 
-== Applying language theory to Chess
+- Designed and delivered \~10 training sessions (\~1.5h each) combining slides and practical labs
 
-#resume-item[
-  During my second year of preparatory class I had to present a yearly project (TIPE) concerning games. I chose to apply the neural network knowledge I had to the case of the chess game. I wanted to create a new language to represent chess games that would be very explicit in terms of what is happening in the game an give a lot of contextual information. I would then train a small autoregressive model on a translated dataset of chess games to see what it retained from the training. The model learned how to move pieces on its own so it understood some of the rules. But it didn't have enough "memory" (I used RNNs) to keep track of the state of the board for more than about a dozen moves. Since my alphabet is very explicit with tokens corresponding to chess concepts (like a Rook, a Bishop, the action of eating, puting someone in check, the rows, the lines etc), the cosine similarity matrix showed some very interesting correlations between tokens of a similar type.
-]
+- Covered a range of neural network architectures: MLPs, CNNs, RNNs, LSTM, GRU, ResNet
 
-== Internship at NXP Semiconductors
+- Taught implementation and best practices in PyTorch, used regularly for 4+ years
 
-#resume-item[
-  During my first year at telecom sudparis I did an internship at NXP semiconductors where I worked in a digital design team where I learned bases of System Verilog. The goal was to do analysis on a frequency estimation algorithm that would ideally be used in the future for estimating the carrier frequency offset (CFO) to enhance the quality of the communications in the case of wireless communications (wifi, bluetooth or radio). I had to compare it against to other state of the art estimators in performance and consumption for different parameters of the alogrithm and in different SNR scenarios. Then I had to help my internship tutor build a testbench around an internal processing unit to make it able to run our custom assembly and then implement the algorithm in that assembly to prove that it is feasible. In this internship I had to read and understand signal processing papers in order to implement the estimators described inside it.
-]
+- Guided peers in hands-on applications of ML concepts
 
-== Mandate in the Campus Network Association
+== Chess Project (TIPE) - Preparatory Class (MPI\*)
 
-#resume-item[
-  I am currently serving in MiNET, the campus networking association for Télécom SudParis and IMT-BS. We ensure the infrastructure that provides internet access—both wired and Wi-Fi to 800 members. We also manage an infrastructure of more than 20 physical servers running Proxmox VE, hosting numerous VMs and LXC containers, along with networking equipment such as Cisco switches and WLC controllers. In this role I deployed an LLM on a server and tested many open-source solutions, including Ollama, llama.cpp, prima.cpp, gemma.cpp, Open-WebUI, and LibreChat.
-]
+- Applied language theory concepts to create a custom chess language with explicit tokens for pieces, moves, actions, and board context
+
+- Trained a small autoregressive RNN on translated chess datasets to study learned patterns
+
+- Analyzed cosine similarity between tokens, revealing correlations between semantically related game elements
+
+- Investigated RNN memory limitations for board state tracking (> 6-8 moves)
+
+== Digital Design Intern - NXP Semiconductors
+
+- Analyzed a frequency estimation algorithm for carrier frequency offset (CFO) in wireless communications (Wi-Fi, Bluetooth, radio)
+
+- Benchmarked against state-of-the-art estimators across different algorithm parameters and SNR scenarios
+
+- Developed a testbench for an internally developed processing unit, enabling execution of custom assembly and implementation of the algorithm
+
+- Studied and applied signal processing literature to implement algorithmic estimators
+
+- Gained foundational experience in SystemVerilog and digital design
+
+
+== Swarm Rescue Challenge - Institut Polytechnique de Paris (Ongoing)
+
+- Competing in a 2D multi-drone rescue challenge with 10 drones navigating mazes to save agents
+
+- Implementing world representation and graph-based navigation using a quad tree to handle obstacles
+
+- Fusing odometry and noisy GPS data with a Kalman filter for robust localization
+
+- Developing pathfinding (A\* / D\*) and MLP-based trajectory following to maximize performance within the simulator
+
+== Campus Network Association (MiNET) — Télécom SudParis / IMT-BS
+
+- Managed network and server infrastructure for 800 members (20+ Proxmox VE servers, HP ProLiant servers, VMs/LXC, Cisco devices)
+
+- Deployed and experimented with large language models on association servers using open-source frameworks (Ollama, llama.cpp, prima.cpp, gemma.cpp, Open-WebUI, LibreChat)
+
+- Gained hands-on experience in systems for AI model deployment and scaling
 
 == Learning the Rust Programming Language
 
-#resume-item[
-  Since the summer holidays of 2025 I have been studying Rust. I enjoy it for its functional programming features and the security guaranties it offers over other languages. As part of my learning I built some projects from scratch such as a JSON parser, a parser for a PNG inspired file format, a Sudoku solver using backtracking, and solved many Advent of Code 2024 and 2025 problems.
-]
+- Studied Rust for its functional programming features and memory safety guarantees
 
-== Unity Video Game Project
+- Implemented projects from scratch: JSON parser, PNG-inspired file format parser, Sudoku solver using backtracking
 
-#resume-item[
-  I contributed to the development of a 3D-rendered video game. In a team of five, I created HLSL shaders, designed particle systems, planned the overall architecture (abstract classes, virtual classes, interfaces) for our C\# project, and produced a UML diagram. I also programmed part of the boss behavior in C\#.
-]
+- Solved numerous Advent of Code 2024–2025 challenges, applying algorithmic problem-solving in Rust
+
+== Unity 3D Game Project
+
+- Developed a 3D-rendered game in a team of five
+
+- Implemented shader graphs and particle systems
+
+- Designed project architecture (abstract/virtual classes, interfaces) and produced UML diagrams
+
+- Programmed boss behavior in C\#
 
 == INT Game Jam
 
-#resume-item[
-  I participated in a Game Jam where, in a team of three, we coded a rendering engine in C based entirely on the ray-marching algorithm. I programmed several maps that evolved over time and position, all implemented with GLSL shaders.
-]
+- Developed a C-based rendering engine on Raylib entirely based on the ray-marching algorithm in a team of three
+
+- Implemented maps as mathematical signed distance functions (SDFs) evolving over time and position in separate GLSL shaders
