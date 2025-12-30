@@ -60,11 +60,11 @@ Most of my project can be found on my #colored-link("https://github.com/matthias
 
 === High-level programming lead, INTech, the robotics association of Télécom SudParis
 
-- Trained PPO agents in the Webots simulator using LiDAR + camera inputs with PyTorch + Stable-Baselines3
+- Trained *PPO* agent in the Webots simulator using LiDAR + camera inputs with *PyTorch* + *Stable-Baselines3*
 
-- Designed architectures with residual connections and two-layer convolutional blocks inspired by ResNet (Dropout + BatchNorm)
+- Designed architectures with residual connections and two-layer convolutional blocks inspired by *ResNet* (Dropout + BatchNorm)
 
-- Optimized models for embedded inference on Raspberry Pi 5 via int8 quantization and ONNX export
+- Optimized models for embedded inference on Raspberry Pi 5 via *int8 quantization* and *ONNX* export
 
 - Parallelized multiple simulation environments to accelerate training using IPC (named pipes) and process synchronization
 
@@ -78,7 +78,7 @@ Most of my project can be found on my #colored-link("https://github.com/matthias
 
 - Covered a range of neural network architectures: MLPs, CNNs, RNNs, LSTM, GRU, ResNet
 
-- Taught implementation and best practices in PyTorch, used regularly for 4+ years
+- Taught implementation and best practices in *PyTorch*, used regularly for 4+ years
 
 == Chess Project (TIPE) - Preparatory Class (MPI\*)
 
@@ -105,11 +105,11 @@ Most of my project can be found on my #colored-link("https://github.com/matthias
 
 - Competing in a 2D multi-drone rescue challenge with 10 drones navigating mazes to save agents
 
-- Implementing world representation and graph-based navigation using a quad tree to handle obstacles
+- Implementing world representation and graph-based navigation using a *quad tree* to handle obstacles
 
-- Fusing odometry and noisy GPS data with a Kalman filter for robust localization
+- Fusing odometry and noisy GPS data with a *Kalman filter* for robust localization
 
-- Developing pathfinding (A\* / D\*) and MLP-based trajectory following to maximize performance within the simulator
+- Developing pathfinding *(A\* / D\*)* and MLP-based trajectory following to maximize performance within the simulator
 
 == Campus Network Association (MiNET) — Télécom SudParis / IMT-BS
 
