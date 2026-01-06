@@ -44,10 +44,9 @@
 
 = Profile
 
-- Seeking a *research internship* from early *July to late August 2026*.
+- Seeking a *research internship*  ideally from early *July to late August 2026*.
 - Second-year engineering student, curious and motivated, with a passion for solving complex problems.
-- Actively involved in school associations.
-- Holds a valid driving license.
+- Actively involved in school associations and holds a valid driving license.
 
 = Programming Languages
 Python, Rust, OCaml, C, C\#, Bash, Java, Lua, SystemVerilog
@@ -115,7 +114,7 @@ Most of my project can be found on my #colored-link("https://github.com/matthias
 
 - Managed network and server infrastructure for 800 members (20+ Proxmox VE servers, HP ProLiant, VMs/LXC, Cisco devices)
 
-- Deployed LLMs on servers using open-source services (Ollama, llama.cpp, prima.cpp, gemma.cpp, Open-WebUI, LibreChat)
+- Deployed LLMs on servers using open-source services (vLLM, Ollama, llama.cpp, prima.cpp, gemma.cpp, Open-WebUI, LibreChat)
 
 == Learning the Rust Programming Language
 
