@@ -44,7 +44,7 @@
 
 = Profile
 
-- Seeking a *research internship*  ideally from early *July to late August 2026*.
+//- Seeking a *research internship*  ideally from early *July to late August 2026*.
 - Second-year engineering student, curious and motivated, with a passion for solving complex problems.
 - Actively involved in school associations and holds a valid driving license.
 
