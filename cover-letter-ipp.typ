@@ -45,7 +45,7 @@ Sur le plan de la recherche, j'ai également assisté à l'AI Summit à l'X l'an
 
 #linebreak()
 
-Intégrer le Master DataAI me permettrait d'approfondir et surtout de formaliser ces sujets pour me préparer à effectuer une thèse par la suite. Je suis très motivé à discuter des axes de recherche possibles avec les enseignants-chercheurs et à m'investir pleinement dans les projets qui me seront confiés.
+Intégrer le Master DataAI me permettrait d'approfondir et surtout de formaliser ces sujets pour me préparer à effectuer une thèse par la suite. Je suis très motivé à l'idée de discuter des axes de recherche possibles avec les enseignants-chercheurs et à m'investir pleinement dans les projets qui me seront confiés.
 
 #linebreak()
 
